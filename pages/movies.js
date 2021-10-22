@@ -4,6 +4,7 @@ import MovieCard from "../components/movies/MovieCard";
 import MovieFilter from "../components/movies/MovieFilter";
 import MoviePagination from "../components/movies/MoviePagination";
 import { useRouter } from "next/router"
+import { API_URL } from "../config"
 
 const PAGE_LIMIT = 10;
 const Movies = () => {
@@ -25,7 +26,7 @@ const Movies = () => {
       queryParams.push(`year=${year}`)
     }
 
-    fetch(`http://localhost:3001/movies?${queryParams.join("&")}`)
+    fetch(`${API_URL}/movies?${queryParams.join("&")}`)
       .then((res) => res.json())
       .then((data) => {
         setMovies(data.items);

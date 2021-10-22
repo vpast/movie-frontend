@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import MovieDetail from "../../components/movies/MovieDetail/MovieDetail";
 import MovieLayout from "../../components/layouts/Movie";
+import { API_URL } from "../../config"
 
 const MoviePage = () => {
   const router = useRouter();
@@ -12,7 +13,7 @@ const MoviePage = () => {
     if (!movie_id) {
       return;
     }
-    fetch(`http://localhost:3001/movies/${movie_id}`)
+    fetch(`${API_URL}/movies/${movie_id}`)
       .then((res) => res.json())
       .then((data) => {
         setMovie(data.item);

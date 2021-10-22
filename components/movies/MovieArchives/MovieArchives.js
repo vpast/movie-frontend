@@ -2,11 +2,12 @@ import { useState, useEffect } from "react";
 import MoviePagination from "../MoviePagination";
 import MovieCard from "../MovieCard";
 import MovieLayout from "../../layouts/Movie";
+import { API_URL } from "../../../config"
 
 const MovieArchives = () => {
   const [movies, setMovies] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3001/movies?archive=true")
+    fetch(`${API_URL}/movies?archive=true`)
       .then((res) => res.json())
       .then((data) => {
         setMovies(data.items);

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { formattedDate } from "../../helpers/date";
 import Link from "next/link"
+import { API_URL } from "../../../config";
 
 const MovieSidebar = () => {
   const [movies, setMovies] = useState([]);
@@ -12,7 +13,7 @@ const MovieSidebar = () => {
     if (!movie_id) {
       return;
     }
-    fetch(`http://localhost:3001/movies?similar=${movie_id}`)
+    fetch(`${API_URL}/movies?similar=${movie_id}`)
       .then((res) => res.json())
       .then((data) => {
         setMovies(data.items);

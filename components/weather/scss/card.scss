@@ -1,0 +1,76 @@
+.cardBlockFlex {
+  display: flex;
+  flex-direction: column;
+  padding-left: 40px;
+  width: 840px;
+}
+
+.cards {
+  margin-top: 40px;
+  padding-left: 30px;
+}
+
+.cardFonts {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.cardFontsColor {
+  color: #949494;
+}
+
+.cardFlex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-left: 15px;
+}
+
+.cardImg {
+  display: flex;
+  justify-content: center;
+}
+
+.cardImg img {
+  padding-left: 0;
+}
+
+.cardFlex p {
+  margin-bottom: 0;
+}
+
+.cardBorder {
+  width: 140px;
+  height: 166px;
+  cursor: pointer;
+}
+
+.cardBorder:hover {
+  background-color: rgb(140, 182, 250);
+  border-radius: 5px;
+}
+
+.cardBorderActive {
+  background-color: rgb(84, 149, 255);
+  border-radius: 5px;
+}
+
+@media(max-width: 990px) {
+  .cardBlockFlex {
+    overflow: hidden;
+    padding-left: 0;
+  }
+
+  
+  .cardFlex {
+    padding-right: 20px;
+  }
+}
+
+@media(max-width: 768px) {
+  .cardBlockFlex {
+    visibility: hidden;
+    max-width: 0;
+  }
+}

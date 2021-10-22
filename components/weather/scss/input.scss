@@ -1,0 +1,30 @@
+.inputFlex {
+  display: flex;
+  align-items: center;
+  padding-top: 70px;
+  padding-left: 70px;
+}
+
+.inputFlex p {
+  font-size: 19px;
+  font-weight: 600;
+  margin-bottom: 0;
+  padding-right: 10px;
+}
+
+.inputFlex input {
+  border: #E2E2E2 2px solid;
+  border-radius: 5px;
+  padding-left: 10px;
+  width: 190px;
+  height: 40px;
+}
+
+@media(max-width: 1400px) {
+  .inputWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 60px;
+  }
+}

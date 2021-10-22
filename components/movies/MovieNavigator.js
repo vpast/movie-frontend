@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Fragment } from "react";
 
-const MovieNavigator = ({ title, items }) => {
+const MovieNavigator = ({ title, items=[] }) => {
   return (
     <section className="after-head d-flex section-text-white position-relative">
       <div

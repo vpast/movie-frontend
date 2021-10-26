@@ -51,43 +51,6 @@ const MovieCard = (props) => {
         </div>
         <p className="text-short entity-text">{plot}</p>
       </div>
-      <div className="entity-extra">
-        <div className="text-uppercase entity-extra-title">Showtime</div>
-        <div className="entity-showtime">
-          <div className="showtime-wrap">
-            <div className="showtime-item">
-              <span className="disabled btn-time btn" aria-disabled="true">
-                11 : 30
-              </span>
-            </div>
-            <div className="showtime-item">
-              <a className="btn-time btn" aria-disabled="false" href="#">
-                13 : 25
-              </a>
-            </div>
-            <div className="showtime-item">
-              <a className="btn-time btn" aria-disabled="false" href="#">
-                16 : 07
-              </a>
-            </div>
-            <div className="showtime-item">
-              <a className="btn-time btn" aria-disabled="false" href="#">
-                19 : 45
-              </a>
-            </div>
-            <div className="showtime-item">
-              <a className="btn-time btn" aria-disabled="false" href="#">
-                21 : 30
-              </a>
-            </div>
-            <div className="showtime-item">
-              <a className="btn-time btn" aria-disabled="false" href="#">
-                23 : 10
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
     </article>
   );
 };

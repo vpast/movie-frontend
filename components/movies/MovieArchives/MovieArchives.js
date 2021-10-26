@@ -14,7 +14,15 @@ const MovieArchives = () => {
       });
   }, []);
   return (
-    <MovieLayout>
+    <MovieLayout title="Archives" items={[{
+      title: "Home",
+      url: "/"
+    },{
+      title: "Movies",
+      url: "/movies"
+    },{
+      title: "Archives"
+    }]}>
       <section className="section-long">
         <div className="container">
           {movies.map((item) => {

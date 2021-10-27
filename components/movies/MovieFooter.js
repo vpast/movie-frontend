@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 const MovieFooter = () => {
   return (
     <footer className="section-text-white footer footer-links bg-darken">
@@ -22,9 +24,11 @@ const MovieFooter = () => {
             <h5 className="footer-title text-uppercase">Movies</h5>
             <ul className="list-unstyled list-wide footer-content">
               <li>
-                <a className="content-link" href="#">
-                  All Movies
-                </a>
+                <Link href="/movies">
+                  <a className="content-link">
+                    All Movies
+                  </a>
+                </Link>
               </li>
             </ul>
           </div>

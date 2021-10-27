@@ -3,6 +3,7 @@ import MoviePagination from "../MoviePagination";
 import MovieCard from "../MovieCard";
 import MovieLayout from "../../layouts/Movie";
 import { API_URL } from "../../../config"
+import MovieArchivesFilter from "../MovieArchives/MovieArchivesFilter";
 
 const MovieArchives = () => {
   const [movies, setMovies] = useState([]);
@@ -25,6 +26,7 @@ const MovieArchives = () => {
     }]}>
       <section className="section-long">
         <div className="container">
+          <MovieArchivesFilter />
           {movies.map((item) => {
             return <MovieCard item={item} key={item._id} />;
           })}

@@ -5,7 +5,7 @@ for (let year = 2016; year >= 1900; year--) {
   years.push(year);
 }
 
-const MovieArchivesFilter = () => {
+const MovieArchivesFilter = ({start_year, end_year}) => {
   const router = useRouter();
   return (
     <div className="section-pannel">
@@ -19,11 +19,11 @@ const MovieArchivesFilter = () => {
                     className="form-control"
                     name="year"
                     onChange={(e) => {
-                      router.push(`/movies?year=${e.target.value}`);
+                      router.push(`/archives?start_year=${e.target.value}&end_year=${end_year}`);
                     }}
+                    value={start_year}
                   >
-                    <option value="">start from year</option>
-                    {years.map((year) => {
+                    {years.filter((year) => year<=end_year).map((year) => {
                       return (
                         <option key={year} value={year}>
                           {year}
@@ -39,11 +39,11 @@ const MovieArchivesFilter = () => {
                     className="form-control"
                     name="year"
                     onChange={(e) => {
-                      router.push(`/movies?year=${e.target.value}`);
+                      router.push(`/archives?start_year=${start_year}&end_year=${e.target.value}`);
                     }}
+                    value={end_year}
                   >
-                    <option value="">end from year</option>
-                    {years.map((year) => {
+                    {years.filter((year) => year>=start_year).map((year) => {
                       return (
                         <option key={year} value={year}>
                           {year}

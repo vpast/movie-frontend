@@ -1,72 +1,154 @@
-import { useRouter } from "next/router"
+import { useRouter } from 'next/router';
+import { useState } from 'react';
 
-const years = []
-for (let year = 2016; year>=1900; year--) {
-  years.push(year)
+const years = [];
+for (let year = 2016; year >= 1900; year--) {
+  years.push(year);
 }
+
+const genres = [
+  {
+    value: 'genre',
+  },
+  {
+    value: 'Action',
+  },
+  {
+    value: 'Adventure',
+  },
+  {
+    value: 'Comedy',
+  },
+  {
+    value: 'Crime',
+  },
+  {
+    value: 'Detective',
+  },
+  {
+    value: 'Drama',
+  },
+  {
+    value: 'Fantasy',
+  },
+  {
+    value: 'Melodrama',
+  },
+  {
+    value: 'Romance',
+  },
+  {
+    value: 'Superhero',
+  },
+  {
+    value: 'Supernatural',
+  },
+  {
+    value: 'Thriller',
+  },
+  {
+    value: 'Sport',
+  },
+  {
+    value: 'Historical',
+  },
+  {
+    value: 'Musical',
+  },
+  {
+    value: 'Sci-fi',
+  },
+  {
+    value: 'War',
+  },
+  {
+    value: 'Western',
+  },
+];
 
 const MovieFilter = () => {
   const router = useRouter();
-  return(
-    <div className="section-pannel">
-    <div className="grid row">
-      <div className="col-md-10">
-        <form autoComplete="off">
-          <div className="row form-grid">
-            <div className="col-sm-6 col-lg-3">
-              <div className="input-view-flat input-group">
-                <select className="form-control" name="genre">
-                  <option >genre</option>
-                  <option>action</option>
-                  <option>adventure</option>
-                  <option>comedy</option>
-                  <option>crime</option>
-                  <option>detective</option>
-                  <option>drama</option>
-                  <option>fantasy</option>
-                  <option>melodrama</option>
-                  <option>romance</option>
-                  <option>superhero</option>
-                  <option>supernatural</option>
-                  <option>thriller</option>
-                  <option>sport</option>
-                  <option>historical</option>
-                  <option>horror</option>
-                  <option>musical</option>
-                  <option>sci-fi</option>
-                  <option>war</option>
-                  <option>western</option>
-                </select>
+  const [selectedGenre, setSelectedGenre] = useState('');
+  const [selectedYear, setSelectedYear] = useState('');
+
+  const genreChangeHandler = (event) => {
+    setSelectedGenre(event.target.value);
+  };
+
+  const yearChangeHandler = (event) => {
+    setSelectedYear(event.target.value);
+  };
+
+  const filterChangeHandler = () => {
+    if (selectedGenre === '') {
+      router.push(`/movies?year=${selectedYear}`);  
+    } else if (selectedYear === '') {
+      router.push(`/movies?genre=${selectedGenre}`);
+    } else {
+      router.push(`/movies?genre=${selectedGenre}&year=${selectedYear}`);
+    }
+  };
+
+  return (
+    <div className='section-pannel'>
+      <div className='grid row'>
+        <div className='col-md-10'>
+          <form autoComplete='off'>
+            <div className='row form-grid'>
+              <div className='col-sm-6 col-lg-3'>
+                <div className='input-view-flat input-group'>
+                  <select
+                    className='form-control'
+                    name='genre'
+                    onChange={genreChangeHandler}
+                  >
+                    {genres.map((data, index) => {
+                      return (
+                        <option key={index} value={data.value}>
+                          {data.value}
+                        </option>
+                      );
+                    })}
+                  </select>
+                </div>
               </div>
-            </div>
-            <div className="col-sm-6 col-lg-3">
-            <div className="input-view-flat input-group">
-                <select className="form-control" name="year" onChange={(e) => {
-                  router.push(`/movies?year=${e.target.value}`)
-                }}>
-                  <option value="">year</option>
-                  {years.map((year) => {
-                    return <option key={year} value={year}>{year}</option>
-                  })}
-                </select>
+              <div className='col-sm-6 col-lg-3'>
+                <div className='input-view-flat input-group'>
+                  <select
+                    className='form-control'
+                    name='year'
+                    onChange={yearChangeHandler}
+                  >
+                    <option value=''>year</option>
+                    {years.map((year) => {
+                      return (
+                        <option key={year} value={year}>
+                          {year}
+                        </option>
+                      );
+                    })}
+                  </select>
+                </div>
               </div>
-            </div>
-            <div className="col-sm-6 col-lg-3">
-              <div className="input-view-flat input-group">
-                <select className="form-control" name="sortBy">
-                  <option >sort by</option>
-                  <option>name</option>
-                  <option>release year</option>
-                  <option>rating</option>
-                </select>
+              <div className='col-sm-6 col-lg-3'>
+                <div className='input-view-flat input-group'>
+                  <select className='form-control' name='sortBy'>
+                    <option>sort by</option>
+                    <option>name</option>
+                    <option>release year</option>
+                    <option>rating</option>
+                  </select>
+                </div>
               </div>
+              <button type='button' onClick={filterChangeHandler}>
+                Submit
+              </button>
             </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
-  )
-}
+  );
+};
 
-export default MovieFilter
+export default MovieFilter;

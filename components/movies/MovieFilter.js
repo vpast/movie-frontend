@@ -130,18 +130,8 @@ const MovieFilter = () => {
                   </select>
                 </div>
               </div>
-              <div className='col-sm-6 col-lg-3'>
-                <div className='input-view-flat input-group'>
-                  <select className='form-control' name='sortBy'>
-                    <option>sort by</option>
-                    <option>name</option>
-                    <option>release year</option>
-                    <option>rating</option>
-                  </select>
-                </div>
-              </div>
               <button type='button' onClick={filterChangeHandler}>
-                Submit
+                Apply
               </button>
             </div>
           </form>

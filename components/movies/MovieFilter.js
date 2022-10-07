@@ -8,13 +8,16 @@ for (let year = 2016; year >= 1900; year--) {
 
 const genres = [
   {
-    value: 'genre',
-  },
-  {
     value: 'Action',
   },
   {
     value: 'Adventure',
+  },
+  {
+    value: 'Animation',
+  },
+  {
+    value: 'Biography',
   },
   {
     value: 'Comedy',
@@ -23,7 +26,7 @@ const genres = [
     value: 'Crime',
   },
   {
-    value: 'Detective',
+    value: 'Documentary',
   },
   {
     value: 'Drama',
@@ -32,16 +35,10 @@ const genres = [
     value: 'Fantasy',
   },
   {
-    value: 'Melodrama',
+    value: 'Family',
   },
   {
     value: 'Romance',
-  },
-  {
-    value: 'Superhero',
-  },
-  {
-    value: 'Supernatural',
   },
   {
     value: 'Thriller',
@@ -50,13 +47,25 @@ const genres = [
     value: 'Sport',
   },
   {
-    value: 'Historical',
+    value: 'Short',
+  },
+  {
+    value: 'History',
+  },
+  {
+    value: 'Horror',
+  },
+  {
+    value: 'Music',
   },
   {
     value: 'Musical',
   },
   {
-    value: 'Sci-fi',
+    value: 'Mystery',
+  },
+  {
+    value: 'Sci-Fi',
   },
   {
     value: 'War',
@@ -102,6 +111,7 @@ const MovieFilter = () => {
                     name='genre'
                     onChange={genreChangeHandler}
                   >
+                    <option value=''>genre</option>
                     {genres.map((data, index) => {
                       return (
                         <option key={index} value={data.value}>
@@ -130,7 +140,7 @@ const MovieFilter = () => {
                   </select>
                 </div>
               </div>
-              <button type='button' onClick={filterChangeHandler}>
+              <button className="button-4 col-sm-6 col-lg-3" type='button' onClick={filterChangeHandler}>
                 Apply
               </button>
             </div>

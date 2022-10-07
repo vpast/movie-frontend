@@ -51,6 +51,11 @@ const MovieArchives = () => {
       <section className="section-long">
         <div className="container">
           <MovieArchivesFilter start_year={start_year} end_year={end_year} />
+          <MoviePagination
+            activePage={activePage}
+            setActivePage={setActivePage}
+            pages={pages}
+          />
           {movies.map((item) => {
             return <MovieCard item={item} key={item._id} />;
           })}

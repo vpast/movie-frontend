@@ -30,11 +30,12 @@ const getButton = (activePage, setActivePage) => {
 };
 
 const MoviePagination = ({
-  pages = 10,
-  activePage = 2,
+  pages = 0,
+  activePage = 0,
   setActivePage = () => {},
 }) => {
   const Button = getButton(activePage, setActivePage);
+
   return (
     <div className='section-bottom'>
       <div className='paginator'>
@@ -63,21 +64,33 @@ const MoviePagination = ({
 
         {activePage > 3 ? (
           <Button page={activePage - 1} />
+        ) : pages <= 2 ? (
+          <></>
         ) : (
           <Button page={2} />
         )}
 
-        {activePage > 3 ? <Button page={+activePage} /> : <Button page={3} />}
+        {activePage > 3 ? (
+          <Button page={+activePage} />
+        ) : pages <= 3 ? (
+          <></>
+        ) : (
+          <Button page={3} />
+        )}
 
         {pages - 1 == activePage ? (
-          <div></div>
+          <></>
         ) : pages == activePage ? (
-          <div></div>
+          <></>
         ) : (
           <span className='paginator-item'>...</span>
         )}
 
-        {pages == activePage ? <div></div> : <Button page={pages} />}
+        {pages == activePage && pages != 2 && pages != 3 ? (
+          <></>
+        ) : (
+          <Button page={pages} onChange={event => console.log(event.target.value)} />
+        )}
 
         <a
           className='paginator-item'

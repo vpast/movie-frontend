@@ -75,7 +75,7 @@ const genres = [
   },
 ];
 
-const MovieFilter = () => {
+const MovieFilter = (props) => {
   const router = useRouter();
   const [selectedGenre, setSelectedGenre] = useState('');
   const [selectedYear, setSelectedYear] = useState('');
@@ -96,6 +96,7 @@ const MovieFilter = () => {
     } else {
       router.push(`/movies?genre=${selectedGenre}&year=${selectedYear}`);
     }
+    props.onChangeHandler(true);
   };
 
   return (

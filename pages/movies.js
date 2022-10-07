@@ -34,6 +34,10 @@ const Movies = () => {
       });
   }, [activePage, genre, year]);
 
+  const pagesChangeHandler = () => {
+    setActivePage(1);
+  };
+
   return (
     <MovieLayout
       title='Movies List'
@@ -49,7 +53,7 @@ const Movies = () => {
     >
       <section className='section-long'>
         <div className='container'>
-          <MovieFilter />
+          <MovieFilter onChangeHandler={pagesChangeHandler} />
           <MoviePagination
             activePage={activePage}
             setActivePage={setActivePage}

@@ -65,7 +65,6 @@ const MovieInfo = ({ movie }) => {
           </div>
           <ul className="entity-list">
             <li>
-              {console.log(movie)}
               <span className="entity-list-title">Release:</span>
               <Link href={`/movies?year=${movie.year}`}><a className="content-link">{formattedDate(movie.released)}</a></Link>
             </li>

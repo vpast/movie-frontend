@@ -26,8 +26,6 @@ const Movies = () => {
       queryParams.push(`year=${year}`);
     }
 
-    console.log(queryParams)
-
     fetch(`${API_URL}/movies?${queryParams.join('&')}`)
       .then((res) => res.json())
       .then((data) => {

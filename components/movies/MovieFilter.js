@@ -90,7 +90,7 @@ const MovieFilter = () => {
 
   const filterChangeHandler = () => {
     if (selectedGenre === '') {
-      router.push(`/movies?year=${selectedYear}`);  
+      router.push(`/movies?year=${selectedYear}`);
     } else if (selectedYear === '') {
       router.push(`/movies?genre=${selectedGenre}`);
     } else {
@@ -140,9 +140,17 @@ const MovieFilter = () => {
                   </select>
                 </div>
               </div>
-              <button className="button-4 col-sm-6 col-lg-3" type='button' onClick={filterChangeHandler}>
-                Apply
-              </button>
+              <div className='col-sm-6 col-lg-3'>
+                <div className='input-view-flat input-group'>
+                  <button
+                    className='form-control'
+                    type='button'
+                    onClick={filterChangeHandler}
+                  >
+                    Apply
+                  </button>
+                </div>
+              </div>
             </div>
           </form>
         </div>

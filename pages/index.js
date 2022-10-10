@@ -1,11 +1,17 @@
-import MovieLayout from "../components/layouts/Movie";
+import MovieLayout from '../components/layouts/Movie';
+import MovieHomePage from '../components/movies/MovieHomePage';
 
 const HomePage = () => {
   return (
-    <MovieLayout title="Home Page" items={[{
-      title: "Home"
-    }]}>
-      <div className="container">HomePage</div>
+    <MovieLayout
+      title='Home Page'
+      items={[
+        {
+          title: 'Home',
+        },
+      ]}
+    >
+      <MovieHomePage />
     </MovieLayout>
   );
 };

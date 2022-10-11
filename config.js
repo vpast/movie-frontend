@@ -1,1 +1,1 @@
-export const API_URL = "https://172.17.0.5:5000"
+export const API_URL = "https://movie-backend.vpast.dev"

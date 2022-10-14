@@ -7,11 +7,22 @@ const MovieInfo = ({ movie }) => {
       <div className="movie-info-entity">
         <div className="entity-poster" data-role="hover-wrap">
           <div className="embed-responsive embed-responsive-poster">
+          {!!movie.poster && (
             <img
-              className="embed-responsive-item"
+              className='embed-responsive-item'
               src={movie.poster}
-              alt="movie poster"
+              onError={({ currentTarget }) => {
+                currentTarget.onerror = null;
+                currentTarget.src = 'https://i.imgur.com/ymQdKor.jpg';
+              }}
             />
+          )}
+          {!movie.poster && (
+            <img
+              className='embed-responsive-item'
+              src='https://i.imgur.com/ymQdKor.jpg'
+            />
+          )}
           </div>
           <div
             className="d-over bg-theme-lighted collapse animated faster"

@@ -60,7 +60,6 @@ const Movies = () => {
             pages={pages}
           />
           {movies.map((item) => {
-            // console.log(item)
             return <MovieCard item={item} key={item._id} />;
           })}
           <MoviePagination

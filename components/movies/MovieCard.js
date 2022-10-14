@@ -60,7 +60,11 @@ const MovieCard = (props) => {
             </div>
           </div>
         </div>
-        <p className='text-short entity-text'>{plot}</p>
+        {!plot ? (
+          <p className='text-short entity-text'>No description.</p>
+        ) : (
+          <p className='text-short entity-text'>{plot}</p>
+        )}
       </div>
     </article>
   );

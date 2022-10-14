@@ -27,7 +27,6 @@ const MovieHeader = () => {
                     <svg
                       src='https://svgshare.com/i/nPD.svg'
                       xmlns='http://www.w3.org/2000/svg'
-                      style={{ height: '1.2em', width: '1.5349em' }}
                     >
                       <path
                         class='fill-path'

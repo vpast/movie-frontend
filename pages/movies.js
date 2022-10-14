@@ -38,8 +38,6 @@ const Movies = () => {
     setActivePage(1);
   };
 
-  let dokku = 'dokku';
-
   return (
     <MovieLayout
       title='Movies List'
@@ -62,6 +60,7 @@ const Movies = () => {
             pages={pages}
           />
           {movies.map((item) => {
+            // console.log(item)
             return <MovieCard item={item} key={item._id} />;
           })}
           <MoviePagination

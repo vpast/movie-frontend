@@ -37,8 +37,8 @@ const MovieFooter = () => {
             <h5 className='footer-title text-uppercase'>Movies</h5>
             <ul className='list-unstyled list-wide footer-content'>
               <li>
-                <Link href='/movies'>
-                  <a className='content-link'>All Movies</a>
+                <Link href='/movies' className='content-link'>
+                  All Movies
                 </Link>
               </li>
             </ul>

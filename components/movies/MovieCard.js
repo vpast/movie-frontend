@@ -35,10 +35,12 @@ const MovieCard = (props) => {
         </h4>
         <div className='entity-category'>
           {genres.map((genre, key) => (
-            <Link href={`/movies?genre=${genre}`}>
-              <a className='content-link' key={key}>
-                {genre + (key !== genres.length - 1 ? ', ' : '')}{' '}
-              </a>
+            <Link
+              href={`/movies?genre=${genre}`}
+              className='content-link'
+              key={key}
+            >
+              {genre + (key !== genres.length - 1 ? ', ' : '')}{' '}
             </Link>
           ))}
         </div>

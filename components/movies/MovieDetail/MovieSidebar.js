@@ -29,30 +29,28 @@ const MovieSidebar = () => {
         {movies.map((movie) => {
           return (
             <div className='movie-short-line-entity' key={movie._id}>
-              <Link href={`/movie/${movie._id}`}>
-                <a className='entity-preview'>
-                  {!!movie.poster && (
-                    <img
-                      className='w-100'
-                      src={movie.poster}
-                      onError={({ currentTarget }) => {
-                        currentTarget.onerror = null;
-                        currentTarget.src = 'https://i.imgur.com/ymQdKor.jpg';
-                      }}
-                    />
-                  )}
-                  {!movie.poster && (
-                    <img
-                      className='w-100'
-                      src='https://i.imgur.com/ymQdKor.jpg'
-                    />
-                  )}
-                </a>
+              <Link href={`/movie/${movie._id}`} className='entity-preview'>
+                {!!movie.poster && (
+                  <img
+                    className='w-100'
+                    src={movie.poster}
+                    onError={({ currentTarget }) => {
+                      currentTarget.onerror = null;
+                      currentTarget.src = 'https://i.imgur.com/ymQdKor.jpg';
+                    }}
+                  />
+                )}
+                {!movie.poster && (
+                  <img
+                    className='w-100'
+                    src='https://i.imgur.com/ymQdKor.jpg'
+                  />
+                )}
               </Link>
               <div className='entity-content'>
                 <h4 className='entity-title'>
-                  <Link href={`/movie/${movie._id}`}>
-                    <a className='content-link'>{movie.title}</a>
+                  <Link href={`/movie/${movie._id}`} className='content-link'>
+                    {movie.title}
                   </Link>
                 </h4>
                 <p className='entity-subtext'>
@@ -69,8 +67,8 @@ const MovieSidebar = () => {
         </div>
         <ul className='list-unstyled list-wider list-categories'>
           <li>
-            <Link href={`/archives`}>
-              <a className='content-link text-uppercase'>2000-2016</a>
+            <Link href={`/archives`} className='content-link text-uppercase'>
+              2000-2016
             </Link>
           </li>
         </ul>

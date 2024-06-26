@@ -18,8 +18,8 @@ const MovieNavigator = ({ title, items=[] }) => {
               if (item.url) {
                 return (
                   <Fragment key={index}>
-                    <Link href={item.url}>
-                      <a className="content-link">{item.title}</a>
+                    <Link href={item.url} className="content-link">
+                      {item.title}
                     </Link>
                     <span className="text-theme mx-2">
                       <i className="fas fa-chevron-right" />

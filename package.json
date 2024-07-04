@@ -5,7 +5,7 @@
   "main": "next.config.js",
   "scripts": {
     "dev": "next dev",
-    "start": "next start -p $PORT",
+    "start": "next start -p 3000",
     "build": "next build"
   },
   "keywords": [],
@@ -13,7 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^1.6.8",
-    "bootstrap": "^5.3.3",
+    "bootstrap": "^4.6.0",
     "chart.js": "^4.4.2",
     "next": "^14.1.4",
     "react": "^18.2.0",

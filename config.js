@@ -1,1 +1,1 @@
-export const API_URL = "http://localhost:3001 || https://movie-catalog-backend.vercel.app"
+export const API_URL = "http://localhost:3001" || 'https://movie-catalog-backend.vercel.app'
